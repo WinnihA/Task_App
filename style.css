@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    /*box- sizing informs browser how to calculate page width*/
+    /*border-box: width and height properties*/
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+
+/*display:- flexDisplays an element as a lock level flex container*/
+    display: flex;
+    flex-direction: column;
+/* set element minimum height to 100% viewport height*/
+    min-height: 100vh;
+    color: rgb(227,67,67);
+    background-color: #374151;
+}
+
+header {
+
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+.task_list_main{
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 300;
+    color: whitesmoke;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
