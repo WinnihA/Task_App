@@ -109,7 +109,7 @@ main {
 	margin-bottom: 1rem;
 }
 
-#tasks .task {
+.task {
 	display: flex;
 	/* The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally) */
 	/* Items will have space between them */
