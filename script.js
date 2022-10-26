@@ -1,16 +1,29 @@
 window.addEventListener('load', () => {
     const form = document.querySelector("#new-task-form");
     const input = document.querySelector("#new-task-input");
-    const list_el = document.querySelector('#tasks');
+    const list_el = document.querySelector("#tasks");
 
     form.addEventListener('submit', (e) => {
         //prevent page from reloading when submit button is clicked
         e.preventDefault();
 
+
+        list_el.appendChild(document.createElement('ol'))
+        new_list_el = document.querySelector("#tasks ol")
+        console.log(new_list_el)
+
         //create a variable and assign the value of task input
         const task = input.value;
+
+        if(!task.trim()){
+            document.getElementById('warning-text').innerHTML = "<small style='color:red;'>Field is Empty</small>"
+            return //stop the rest of the code from running
+        }else{
+            document.getElementById('warning-text').innerHTML = ""
+            //present to remove the warning text after proper submission
+        }
         //create a div document and assign it to task_el
-        const task_el = document.createElement('div');
+        const task_el = document.createElement('li');
         //assign the class task to the element...
         task_el.classList.add('task');
         //same workflow as above
@@ -22,6 +35,9 @@ window.addEventListener('load', () => {
 
         //create an input field to store the task values
         const task_input_el = document.createElement('input')
+
+        
+
         task_input_el.classList.add('text');
         task_input_el.type = 'text';
         //assign the task to the input field created above
@@ -48,10 +64,11 @@ window.addEventListener('load', () => {
 
         input.value = '';
 
-        list_el.appendChild(task_el);
+        new_list_el.appendChild(task_el);
 
         task_edit_el.addEventListener('click', (e) =>{
-            if(task_edit_el.innerText.toLowerCase()="edit"){
+            console.log(task_edit_el.innerText.toLowerCase())
+            if(task_edit_el.innerText.toLowerCase() == "edit"){
                 task_edit_el.innerText= "save";
                 task_input_el.removeAttribute("readonly");
                 task_input_el.focus();
@@ -61,7 +78,7 @@ window.addEventListener('load', () => {
             }
         });
         task_del_el.addEventListener('click', (e)=> {
-            list_el.removeChild(task_el);
+            new_list_el.removeChild(task_el);
         });
 
 

@@ -17,7 +17,7 @@ body {
 	/* set element minimum height to 100% viewport height */
 	/* Adopts height to viewport */
 	min-height: 100vh;
-	color: rgb(227, 67, 67);
+	/* color: rgb(0, 0, 0); */
 	background-color:#374151;
 }
 
@@ -27,6 +27,9 @@ header {
 	max-width: 800px;
 	width: 100%;
 	margin: 0 auto;
+}
+ol{
+	list-style-type: decimal-leading-zero !important;
 }
 
 h1{ 
@@ -135,6 +138,8 @@ main {
 .task .content .text:not(:read-only) {
 	color: var(--pink);
 } */
+
+
 
 .task .actions {
 	display: flex;
